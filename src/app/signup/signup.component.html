@@ -1,1 +1,50 @@
-<p>signup works!</p>
+<!--Div for Background-->
+<div class="bg text-center">
+  <!--Div for Centered Text & Input-->
+  <div class="centered">
+    <p class="firstLine">
+      S &nbsp; I &nbsp; G &nbsp; N &nbsp; . &nbsp; U &nbsp; P
+    </p>
+
+    <p class="secondLine">The Simplest Notes List Ever</p>
+    <div class="row my-4">
+      <div class="col-6">
+        <input [(ngModel)]="userObj.firstName" class="InputStyle" placeholder="First Name" style="width: 100% ;font-family: Arial, FontAwesome" type="text"/>
+      </div>
+      <div class="col-6">
+        <input [(ngModel)]="userObj.lastName" class="InputStyle" placeholder="Last Name" style="width: 100% ;font-family: Arial, FontAwesome" type="text"/>
+      </div>
+
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <input [(ngModel)]="userObj.dob" class="InputStyle" placeholder="Date Of Birth" style="width: 100% ;font-family: Arial, FontAwesome" type="date"/>
+      </div>
+
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <input [(ngModel)]="userObj.email" class="InputStyle" placeholder="Email" style="width: 100% ;font-family: Arial, FontAwesome" type="text"/>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <input [(ngModel)]="userObj.cellPhone" class="InputStyle" placeholder="Cell Phone" style="width: 100% ;font-family: Arial, FontAwesome" type="text"/>
+      </div>
+    </div>
+    <p class="mt-5">
+      <button type="button" routerLink="/login" class="btn btn-info btn-sm">Login</button>
+      <button [disabled]="!userObj.email" type="button" (click)="Register()" class="btn btn-success btn-sm mx-2">Register</button>
+    </p>
+
+  </div>
+
+  <!--Div for bottom Icons-->
+  <div class="social-btn">
+    <a href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+  </div>
+</div>
+<ngb-toast *ngIf="toastnfo" [autohide]="true" class="toast-container text-white position-fixed top-0 end-0 bg-info" style="margin-top: 10px;">
+  {{toastnfo}}
+</ngb-toast>

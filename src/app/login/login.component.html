@@ -1,1 +1,34 @@
-<p>login works!</p>
+<!--Div for Background-->
+<div class="bg text-center">
+  <!--Div for Centered Text & Input-->
+  <div class="centered">
+    <p class="firstLine">
+      L &nbsp; O &nbsp; G &nbsp; . &nbsp; I &nbsp; N
+    </p>
+
+    <p class="secondLine">The Simplest Notes List Ever</p>
+
+    <p>
+      <input [(ngModel)]="email"
+        class="InputStyle"
+        placeholder="Enter your email"
+        style="font-family: Arial, FontAwesome"
+        type="text"
+      />
+    </p>
+    <p class="mt-5">
+      <button type="button" routerLink="/register" class="btn btn-info btn-sm">Regiser</button>
+      <button [disabled]="!email" type="button" (click)="Login()" class="btn btn-success btn-sm mx-2">Login</button>
+    </p>
+
+  </div>
+
+  <!--Div for bottom Icons-->
+  <div class="social-btn">
+    <a href="#" title="Facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" title="Twitter"><i class="fa fa-twitter"></i></a>
+  </div>
+</div>
+<ngb-toast *ngIf="toastnfo" [autohide]="true" class="toast-container text-white position-fixed top-0 end-0 bg-info" style="margin-top: 10px;">
+  {{toastnfo}}
+</ngb-toast>
